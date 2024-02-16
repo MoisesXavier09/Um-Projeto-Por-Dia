@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #E9EBF2;
+    --bg-card: #fff;
+    --title: #3e3e3e;
+    --text:#6d6d6d;
+    --text-secondary: #fff;
+    --color-secondary: #6494fb;
+    --color-terciary: #CED1E0;
+    --color-point: orange;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--bg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--title);
+}
+
+p {
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--text);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 185px);
+    grid-template-rows: 80px 160px 250px;
+    grid-template-areas: 
+    "perfil perfil perfil"
+    "work web font"
+    "interactive web c4d";
+    gap: 16px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.flex {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 7px;
+}
+
+.card .count {
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: var(--color-secondary);
+    padding: 2px 10px;
+    border-radius: 10px;
+    display: inline;
+}
+
+.perfil {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: perfil;
+}
+
+.person {
+    margin-left: 15px;
+    display: flex;
+    justify-content: start;
+    align-items: center; 
+}
+
+.person .text h1 {
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--title);
+    opacity: .8;
+}
+
+.person .text p {
+    opacity: .7;
+}
+
+.perfil button {
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 20px;
+    padding: 4px 22px;
+}
+
+.work {
+    grid-area: work;
+    height: max-content;
+    padding-left: 25px;
+}
+
+.work h2 {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.work h2::before {
+    content: ' ';
+    background-color: var(--color-point);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    /* margin-right: 7px; */
+    /* margin-bottom: 3px; */
+    /* display: inline-block; */
+    position: absolute;
+    left: -15px;
+    top: 10px;
+}
+
+.work .works {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.work .works .rounded-work{
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: var(--color-terciary);
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+.web {
+    grid-area: web;
+    height: 340px;
+}
+.font {
+    grid-area: font;
+}
+.interactive {
+    grid-area: interactive;
+}
+.c4d {
+    grid-area: c4d;
+}
