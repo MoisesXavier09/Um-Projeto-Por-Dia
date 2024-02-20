@@ -48,11 +48,12 @@ p {
 main {
     display: grid;
     grid-template-columns: repeat(3, 185px);
-    grid-template-rows: 80px 160px 250px;
+    grid-template-rows: 80px 2fr;
     grid-template-areas: 
     "perfil perfil perfil"
-    "work web font"
-    "interactive web c4d";
+    "column1 column2 column3";
+    justify-content: center;
+    align-items: start;
     gap: 16px;
 }
 
@@ -117,8 +118,29 @@ main {
     padding: 4px 22px;
 }
 
+.column1 {
+    grid-area: column1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: start;
+    height: 100%;
+}
+
+.column2 {
+    grid-area: column2;
+}
+
+.column3 {
+    grid-area: column3;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: start;
+    height: 100%;
+}
+
 .work {
-    grid-area: work;
     height: max-content;
     padding-left: 25px;
 }
@@ -165,10 +187,13 @@ main {
 }
 .font {
     grid-area: font;
+    min-height: 160px;
 }
 .interactive {
     grid-area: interactive;
+    min-height: 290px;
 }
 .c4d {
     grid-area: c4d;
+    min-height: 240px;
 }
