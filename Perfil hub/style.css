@@ -47,8 +47,8 @@ p {
 
 main {
     display: grid;
-    grid-template-columns: repeat(3, 185px);
-    grid-template-rows: 80px 2fr;
+    grid-template-columns: repeat(3, 300px); /* 185px */
+    grid-template-rows: 80px auto;
     grid-template-areas: 
     "perfil perfil perfil"
     "column1 column2 column3";
@@ -61,6 +61,24 @@ main {
     background-color: var(--bg-card);
     border-radius: 12px;
     padding: 12px;
+    width: 100%;
+}
+
+.images, img {
+    width: 100%;
+}
+
+.more {
+    color: var(--text-secondary);
+    font-size: 2.4rem;
+    background-color: var(--text);
+    line-height: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .flex {
@@ -181,19 +199,57 @@ main {
     border-radius: 20px;
 }
 
+.interactive {
+    grid-area: interactive;
+    /* min-height: 290px; */
+    /* height: max-content; */
+}
+
+.interactive .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, minmax(50px, auto));
+    gap: 5px;
+}
+
+.grid-2 > img:nth-child(1) {
+    grid-column: 1 / span 2;
+}
+
+.grid-2 .linha3 {
+    height: 100%;
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    gap: 5px;
+}
+
+/* .grid-2 .linha3 img {
+    height: 25px;
+} */
+
+/* .grid-2 .linha3 .more {
+    grid-column: 2;
+} */
+
+/* .grid-2 img:nth-child(4) {
+    grid-column: 1;
+    width: 70%;
+} */
+
+/* .grid-2 .more {
+    grid-column: 2 / 2;
+} */
+
 .web {
     grid-area: web;
-    height: 340px;
+    /* height: 340px; */
 }
 .font {
     grid-area: font;
-    min-height: 160px;
-}
-.interactive {
-    grid-area: interactive;
-    min-height: 290px;
+    /* min-height: 160px; */
 }
 .c4d {
     grid-area: c4d;
-    min-height: 240px;
+    /* min-height: 240px; */
 }
