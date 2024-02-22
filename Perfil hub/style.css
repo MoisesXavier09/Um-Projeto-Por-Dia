@@ -69,7 +69,6 @@ img {
 .card {
     background-color: var(--bg-card);
     border-radius: 12px;
-    box-shadow: ;
     padding: 20px;
     width: 100%;
     box-shadow: 10px 25px 15px rgba(141, 141, 141, 0.208);
