@@ -48,24 +48,31 @@ p {
 main {
     display: grid;
     grid-template-columns: repeat(3, 300px); /* 185px */
-    grid-template-rows: 80px auto;
+    grid-template-rows: auto auto;
     grid-template-areas: 
-    "perfil perfil perfil"
+    "perfil perfil none"
     "column1 column2 column3";
     justify-content: center;
-    align-items: start;
-    gap: 16px;
+    gap: 20px;
+}
+
+.images, img {
+    width: 100%;
+}
+
+img {
+    border-radius: 5px;
+    max-height: 100%;
+    object-fit: cover;
 }
 
 .card {
     background-color: var(--bg-card);
     border-radius: 12px;
-    padding: 12px;
+    box-shadow: ;
+    padding: 20px;
     width: 100%;
-}
-
-.images, img {
-    width: 100%;
+    box-shadow: 10px 25px 15px rgba(141, 141, 141, 0.208);
 }
 
 .more {
@@ -86,6 +93,7 @@ main {
     justify-content: start;
     align-items: center;
     gap: 7px;
+    margin-bottom: 5px;
 }
 
 .card .count {
@@ -99,7 +107,7 @@ main {
 }
 
 .perfil {
-    width: 350px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,10 +115,17 @@ main {
 }
 
 .person {
-    margin-left: 15px;
     display: flex;
     justify-content: start;
     align-items: center; 
+}
+
+.person img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-right: 10px;
+    box-shadow: 0px 0px 5px 2px rgba(141, 141, 141, 0.209);
 }
 
 .person .text h1 {
@@ -127,13 +142,13 @@ main {
 
 .perfil button {
     color: var(--text-secondary);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     background-color: var(--color-secondary);
     border: none;
     border-radius: 20px;
-    padding: 4px 22px;
+    padding: 4px 30px;
 }
 
 .column1 {
@@ -201,22 +216,22 @@ main {
 
 .interactive {
     grid-area: interactive;
-    /* min-height: 290px; */
-    /* height: max-content; */
 }
 
-.interactive .grid-2 {
+.interactive .grid-1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, minmax(50px, auto));
+    grid-template-rows: 150px repeat(2, 100px);
     gap: 5px;
 }
 
-.grid-2 > img:nth-child(1) {
+.grid-1 > img:nth-child(1) {
     grid-column: 1 / span 2;
+    max-height: 100%;
+    object-fit: cover;
 }
 
-.grid-2 .linha3 {
+.grid-1 .linha3 {
     height: 100%;
     grid-column: 1 / span 2;
     display: grid;
@@ -224,32 +239,65 @@ main {
     gap: 5px;
 }
 
-/* .grid-2 .linha3 img {
-    height: 25px;
-} */
-
-/* .grid-2 .linha3 .more {
-    grid-column: 2;
-} */
-
-/* .grid-2 img:nth-child(4) {
-    grid-column: 1;
-    width: 70%;
-} */
-
-/* .grid-2 .more {
-    grid-column: 2 / 2;
-} */
+.grid-1 .linha3 img {
+    max-height: 100px;
+}
 
 .web {
     grid-area: web;
     /* height: 340px; */
 }
+
+.web .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 150px repeat(3, 100px);
+    gap: 5px;
+}
+
+.web .grid-2 img:nth-child(1) {
+    grid-column: 1 / span 2;
+}
+
+.web .grid-2 img:nth-child(2) {
+    grid-row: 2 / span 4;
+    height: 310px;
+    object-fit: fill;
+}
+
 .font {
     grid-area: font;
     /* min-height: 160px; */
 }
+
+.font .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px 60px;
+    gap: 5px;
+}
+
+.font .grid-3 img:nth-child(1) {
+    grid-row: 1 / span 2;
+    height: 170px;
+}
+
 .c4d {
     grid-area: c4d;
     /* min-height: 240px; */
+}
+
+.c4d .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 120px repeat(2, 80px);
+    gap: 5px;
+}
+
+.c4d .grid-4 img:nth-child(1) {
+    grid-column: 1 / span 2;
+}
+
+.c4d .grid-4 img:nth-child(2) {
+    grid-row: 2 / span 3;
 }
