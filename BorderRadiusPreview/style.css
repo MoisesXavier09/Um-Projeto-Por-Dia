@@ -1,9 +1,69 @@
-.quadrado {
-    width: 100px;
-    height: 100px;
-    background-color: black;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+.container {
+    border: 1px black solid;
+    border-radius: 25px;
+    width: 550px;
+    height: 250px;
+    padding: 0 0 0 80px;
+    display: grid;
+    grid-template-columns: auto 230px;
+    justify-content: center;
+    align-items: center;
+    gap: 95px;
+    overflow: hidden;
+}
+
+.container .square {
+    width: 150px;
+    height: 150px;
+    background-color: gray;
+}
+
+.container .radius-section {
+    background-color: rgb(221, 221, 221);
+    border-left: 1px solid black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .inputs {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.container .inputs label {
+    text-align: center;
+}
+
+.container .inputs input {
+    border-radius: 7px;
+    border: 1px rgba(0, 0, 0, 0.608) solid;
+    width: 50px;
+    padding: 5px 5px;
+    outline: none;
 }
